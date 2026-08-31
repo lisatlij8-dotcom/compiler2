@@ -1,0 +1,115 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE EDIT</title>
+  <link rel="stylesheet" href="/static/css/index.css"></head><body>
+  <main>
+    <header class="store-hero">
+      <div class="hero-copy">
+        <div class="eyebrow">CURATED COLLECTION</div>
+        <h1>THE EDIT</h1>
+        <p class="tagline">Curated pieces for everyday style.</p>
+        <p class="supporting">Discover selected fashion, accessories and lifestyle pieces in one place.</p>
+      </div>
+      <div class="hero-actions">
+        <span class="product-count">4 products</span>
+        <a class="button hero-add" href="/add">+ Add Product</a>
+      </div>
+    </header>
+
+    
+    <section class="product-grid">
+      
+      <article>
+        
+        <img class="product-image" src="/static/uploads/3ff72706e31e4106b83fcba44d51dcae.jpg" alt="sun glasses">
+        
+        <div class="product-content">
+          <h2>sun glasses</h2>
+          <p class="meta">glasses - $15.99</p>
+          <p>brown unisex glasses</p>
+          <div class="actions">
+            <a class="button secondary" href="/product/1">Details</a>
+            <a class="button" href="/edit/1">Edit</a>
+            <form id="delete-form-1" action="/delete" method="post">
+              <input type="hidden" name="product_id" value="1">
+              <button class="danger delete-trigger" type="button" data-form-id="delete-form-1" data-product-name="sun glasses">Delete</button>
+            </form>
+          </div>
+        </div>
+      </article>
+      
+      <article>
+        
+        <img class="product-image" src="/static/uploads/a2b771a6ad0a45e2a8a49a549674ccb0.jpg" alt="belt">
+        
+        <div class="product-content">
+          <h2>belt</h2>
+          <p class="meta">belt - $40.00</p>
+          <p>women's belt</p>
+          <div class="actions">
+            <a class="button secondary" href="/product/4">Details</a>
+            <a class="button" href="/edit/4">Edit</a>
+            <form id="delete-form-4" action="/delete" method="post">
+              <input type="hidden" name="product_id" value="4">
+              <button class="danger delete-trigger" type="button" data-form-id="delete-form-4" data-product-name="belt">Delete</button>
+            </form>
+          </div>
+        </div>
+      </article>
+      
+      <article>
+        
+        <img class="product-image" src="/static/uploads/5b5c9432ca49415fa56d18b9f02d61c5.png" alt="miu miu handbag">
+        
+        <div class="product-content">
+          <h2>miu miu handbag</h2>
+          <p class="meta">handbag - $150.00</p>
+          <p>luxury women's handbag</p>
+          <div class="actions">
+            <a class="button secondary" href="/product/5">Details</a>
+            <a class="button" href="/edit/5">Edit</a>
+            <form id="delete-form-5" action="/delete" method="post">
+              <input type="hidden" name="product_id" value="5">
+              <button class="danger delete-trigger" type="button" data-form-id="delete-form-5" data-product-name="miu miu handbag">Delete</button>
+            </form>
+          </div>
+        </div>
+      </article>
+      
+      <article>
+        
+        <img class="product-image" src="/static/uploads/e33b4248519f4284b2a01373d0869da7.png" alt="heels">
+        
+        <div class="product-content">
+          <h2>heels</h2>
+          <p class="meta">heels - $180.00</p>
+          <p>fjvjngfhjbj</p>
+          <div class="actions">
+            <a class="button secondary" href="/product/6">Details</a>
+            <a class="button" href="/edit/6">Edit</a>
+            <form id="delete-form-6" action="/delete" method="post">
+              <input type="hidden" name="product_id" value="6">
+              <button class="danger delete-trigger" type="button" data-form-id="delete-form-6" data-product-name="heels">Delete</button>
+            </form>
+          </div>
+        </div>
+      </article>
+      
+    </section>
+    
+  </main>
+
+  <div class="modal-backdrop" id="delete-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+      <div class="modal-icon" aria-hidden="true">!</div>
+      <h2 id="delete-modal-title">Delete product?</h2>
+      <p id="delete-modal-message">Are you sure you want to delete this product? This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="cancel" type="button" id="cancel-delete">Cancel</button>
+        <button class="danger" type="button" id="confirm-delete">Delete Product</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/index.js"></script></body></html>

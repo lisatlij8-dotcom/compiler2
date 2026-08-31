@@ -1,0 +1,51 @@
+//package AST;
+//
+//public class ImportStatement extends AstNode {
+//    private String fromModule; // اسم المكتبة (مثل flask) - يمكن أن يكون null
+//    private String importedName; // الاسم المستورد (مثل Flask)
+//
+//    public ImportStatement(String fromModule, String importedName, int linenumber) {
+//        super("ImportStatement", linenumber);
+//        this.fromModule = fromModule;
+//        this.importedName = importedName;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        if (fromModule != null) {
+//            return "Import: from " + fromModule + " import " + importedName;
+//        }
+//        return "Import: " + importedName;
+//    }
+//}
+package AST;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ImportStatement extends AstNode {
+    private String module;
+
+    public ImportStatement(String module, List<String> names, int line) {
+        super("Import(" + module + ")", line);
+        this.module = module;
+
+        for (String n : names) {
+            addChild(new Identifier(n, line));
+        }
+    }
+
+    public String getModule() {
+        return module;
+    }
+
+    public List<String> getImportedNames() {
+        List<String> names = new ArrayList<>();
+        for (AstNode child : children) {
+            if (child instanceof Identifier) {
+                names.add(((Identifier) child).getName());
+            }
+        }
+        return names;
+    }
+}
